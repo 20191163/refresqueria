@@ -19,6 +19,7 @@ const Navbar = () => {
   };
 
   return (
+    <div className='content'>
     <header className={`menu__wrapper ${menuOpen ? 'menu__wrapper--open' : ''}`}>
       <div className="menu__bar">
         <div className="logo">
@@ -27,7 +28,7 @@ const Navbar = () => {
         
         <div class="temas-var">
             <ul class="nav-var">
-                <li><a href="#">Sobre mí</a></li>
+                <li><a href="#">Productos</a></li>
                 <li><a href="#">Proyectos</a></li>
                 <li><a href="#">Testimonios</a></li>
                 <li><a href="#">Contactos</a></li>
@@ -41,6 +42,7 @@ const Navbar = () => {
       </div>
       {loginModalOpen && <LoginModal onClose={handleCloseLoginModal} />}
     </header>
+    </div>
   );
 };
 

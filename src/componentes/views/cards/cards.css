@@ -1,84 +1,72 @@
-
-
-body{
+body {
     display: flex;
     flex: auto;
 }
 
 .mis-proyectos {
-    
-  }
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+    justify-content: space-around; /* Espacio entre los proyectos */
+    max-width: 1200px; /* Ajusta el ancho máximo según sea necesario */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+}
+
 .card {
-
-display: flex;
-margin: 5vh;
-align-items: center;
-
-width: 50vw;
-
-max-width: 550px;
-
-padding: 50px 30px 50px 20px;
-
-background: #86ac9b;
-
-border-radius: 24px;
-display: flex;
-    justify-content: space-between; /* Espacio entre los proyectos */
+    display: flex;
+    flex-direction: column; /* Apila los elementos en dispositivos más pequeños */
+    align-items: center;
+    margin: 5vh;
+    width: 45%; /* Ajusta el ancho de cada tarjeta según sea necesario */
+    max-width: 300px; /* Establece un ancho máximo para evitar que se extienda demasiado */
+    padding: 20px;
+    background: #86ac9b;
+    border-radius: 24px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .card img {
+    max-width: 280px;
+    width: 28vw;
+    height: 300px;
+    object-fit: cover;
+    margin-left: -60px;
+    margin-right: 30px;
+    border-radius: inherit;
+    box-shadow: 0 60px 40px rgb(0, 0, 0, 0.08);
+}
 
-max-width: 280px;
+.card h3 {
+    color: rgb(0, 0, 0, 0.9);
+}
 
-width: 28vw;
+.card p {
+    color: rgb(0, 0, 0, 0.7);
+}
 
-height: 300px;
-
-object-fit: cover;
-
-margin-left: -60px;
-
-margin-right: 30px;
-
-border-radius: inherit;
-
-box-shadow: 0 60px 40px rgb(000/ 8%); }
-
-.card h3 { color: rgb(000 / 90%); }
-
-.card p { color: rgb(000/70%);}
 .card button {
-
-border: 0; 
-background: #e3413f; 
-color: #f8f8f8; 
-font-family: inherit; 
-padding: 16px 26px; 
-font-size: 16px;
-
-border-radius: 40px; }
-
-@media (width <= 740px) {
-
-.card { 
-    flex-direction: column; 
-    text-align: center; 
-    margin: 40px; 
-    padding-left: 50px; 
-    padding-right: 50px; 
-    width: 100%; 
-    
+    border: 0;
+    background: #e3413f;
+    color: #f8f8f8;
+    font-family: inherit;
+    padding: 16px 26px;
+    font-size: 16px;
+    border-radius: 40px;
 }
 
-.card img {
+@media (max-width: 740px) {
+    .card {
+        flex-direction: column;
+        text-align: center;
+        margin: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 80%; /* Ajusta el ancho según sea necesario */
+        max-width: 100%;
+    }
 
-margin: -100px 0 30px 0;
-
-width: 100%;
-
-max-width: 1000px;
-
-}
-
+    .card img {
+        margin: -20px 0 20px 0;
+        width: 100%;
+        max-width: 100%;
+    }
 }

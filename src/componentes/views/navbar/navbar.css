@@ -16,7 +16,10 @@ body {
 }
 
 
-
+.content{
+    display: flex;
+    justify-content: space-between; /* Espacio entre los proyectos */
+}
 /* Navigation Menu */
 
 
@@ -154,9 +157,10 @@ body {
 
 .menu__bar {
     display: flex;
-    align-items: center;
+    justify-content: space-between; /* Espacio entre los proyectos */
     width: 100%; /* Ocupa todo el ancho disponible */
     box-sizing: border-box; /* Incluye el padding en el ancho total */
+    
 }
 
 .var-nav {
