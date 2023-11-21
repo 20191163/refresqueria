@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+import Navbar from './componentes/views/navbar/Navbar';
+
+import Footer from './componentes/views/footer/footer';
+import Card from './componentes/views/cards/cards'
 
 function App() {
+  useEffect(() => {
+    document.title = 'Refresqueria';
+  }, []); 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Helmet>
+      <link rel="icon" type="image/png" href="../src/componentes/img/logo.jpeg" />
+
+      </Helmet>
+      <Navbar />
+
+      
+      <Card />
+    </>
   );
 }
 
