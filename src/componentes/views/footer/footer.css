@@ -1,7 +1,14 @@
 /* Estilos generales del footer */
 footer {
-    margin: 0 30px;
-    color: rgb(255, 255, 255, 0.5);
+    background: #86ac9b;
+    color: rgba(0, 0, 0, 0.5);
+    padding: 20px 0; /* Ajusta el espacio de relleno según sea necesario */
+    width: 100%;
+    position: relative;
+  }
+  
+  .top {
+    height: auto;
   }
   
   /* Estilos para el footer.top */
@@ -110,6 +117,7 @@ footer {
   
     .socials-column :is(h2, p) {
       display: block;
+    
     }
   }
   

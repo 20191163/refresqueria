@@ -1,11 +1,12 @@
 import React from 'react';
 import "../footer/footer.css"
+import logos from '../../../componentes/img/logo.jpeg';
 function footer() {
   return (
     <section>
       {/* Primer Footer */}
       <footer className="top">
-        <img src="logo.svg" alt="Logo" />
+        <img src={logos} alt="Logo" />
         <div className="links">
           {/* Primera columna de enlaces */}
           <div className="links-column">
