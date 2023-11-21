@@ -6,8 +6,7 @@ body{
 }
 
 .mis-proyectos {
-    display: flex;
-    justify-content: space-between; /* Espacio entre los proyectos */
+    
   }
 .card {
 
@@ -24,7 +23,8 @@ padding: 50px 30px 50px 20px;
 background: #86ac9b;
 
 border-radius: 24px;
-
+display: flex;
+    justify-content: space-between; /* Espacio entre los proyectos */
 }
 
 .card img {
