@@ -72,3 +72,14 @@ body {
         max-width: 100%;
     }
 }
+
+.search-bar {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #ffffff; /* Mismo color de fondo que las cards */
+    border-radius: 24px; /* Mismo borde redondeado que las cards */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Misma sombra que las cards */
+    font-size: medium;
+}
+

@@ -5,6 +5,7 @@ import '../cards/cards.css';
 
 const App = () => {
   const [selectedRefresco, setSelectedRefresco] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const refrescos = [
     {
@@ -148,8 +149,16 @@ const App = () => {
     setSelectedRefresco(refrescoId);
   };
 
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const filteredRefrescos = refrescos.filter((refresco) =>
+    refresco.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   const renderRefrescos = () => {
-    return refrescos.map((refresco) => (
+    return filteredRefrescos.map((refresco) => (
       <div key={refresco.id} className={`card ${selectedRefresco === refresco.id ? 'selected' : ''}`} onClick={() => handleRefrescoClick(refresco.id)}>
         <img src={refresco.image} alt={refresco.name} />
 
@@ -164,8 +173,11 @@ const App = () => {
   };
 
   return (
-    <div className="mis-proyectos">
-      {renderRefrescos()}
+    <div>
+      <input className='search-bar' type="text" placeholder="Buscar refresco..." value={searchTerm} onChange={handleSearchChange} />
+      <div className="mis-proyectos">
+        {renderRefrescos()}
+      </div>
     </div>
   );
 }
