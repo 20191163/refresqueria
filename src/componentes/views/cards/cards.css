@@ -4,11 +4,13 @@ body {
 }
 
 .mis-proyectos {
+    
     display: flex;
     flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
     justify-content: space-around; /* Espacio entre los proyectos */
     max-width: 1200px; /* Ajusta el ancho máximo según sea necesario */
     margin: 0 auto; /* Centra el contenido horizontalmente */
+    
 }
 
 .card {

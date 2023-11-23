@@ -178,6 +178,7 @@ const App = () => {
       <div className="mis-proyectos">
         {renderRefrescos()}
       </div>
+      
     </div>
   );
 }

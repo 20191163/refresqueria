@@ -1,13 +1,26 @@
-const LOADING_SCREEN_TIMEOUT = 2000; // Tiempo en milisegundos
+const cacheName = 'mi-app-cache';
+const filesToCache = [
+  '/',
+  '/index.html',
+  '/manifest.json',
+  '../src/index.js',
+  '../src/App.js',
+  '../src/componentes/views/loading/loading.js',
+  '../src/componentes/views/loading/styles.css',
+];
 
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    new Promise((resolve) => {
-      setTimeout(resolve, LOADING_SCREEN_TIMEOUT);
-    }).then(() => self.skipWaiting())
+self.addEventListener('install', (e) => {
+  e.waitUntil(
+    caches.open(cacheName).then((cache) => {
+      return cache.addAll(filesToCache);
+    })
   );
 });
 
-self.addEventListener('activate', (event) => {
-  event.waitUntil(self.clients.claim());
+self.addEventListener('fetch', (e) => {
+  e.respondWith(
+    caches.match(e.request).then((response) => {
+      return response || fetch(e.request);
+    })
+  );
 });

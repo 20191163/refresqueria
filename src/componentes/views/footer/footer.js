@@ -1,41 +1,70 @@
-import React from 'react';
-import "../footer/footer.css"
-import logos from '../../../componentes/img/logo.jpeg';
-function footer() {
+import React, { useState } from 'react';
+
+const Footer = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   return (
-    <section>
-      {/* Primer Footer */}
-      <footer className="top">
-        <img src={logos} alt="Logo" />
-        <div className="links">
-          {/* Primera columna de enlaces */}
-          <div className="links-column">
-            <h2>Get Started</h2>
-            <a>Introduction</a>
-            {/* Agrega más enlaces aquí según sea necesario */}
-          </div>
-          {/* Segunda columna de enlaces, por ejemplo, redes sociales */}
-          <div className="links-column socials-column">
-            <h2>Social Media</h2>
-            <p>Follow us</p>
-            <div className="socials">
-              <a className="fa-brands fa-facebook"></a>
-              {/* Agrega más enlaces de redes sociales aquí */}
-            </div>
-          </div>
-        </div>
-      </footer>
+    <footer style={styles.footer}>
+      <p>© 2023 Mi Sitio Web</p>
+      <p>
+        <span onClick={openModal}>Políticas de Privacidad</span>
+        {' | '}
+        <span onClick={openModal}>Acerca de Nosotros</span>
+        {' | '}
+        <span onClick={openModal}>Términos y Condiciones</span>
+      </p>
 
-      {/* Segundo Footer */}
-      <footer className="bottom">
-        <p className="copyright"> 2023 ...</p>
-        <div className="legal">
-          <a>License</a>
-          {/* Agrega más enlaces legales aquí */}
+      {isModalOpen && (
+        <div style={styles.modalOverlay}>
+          <div style={styles.modalContent}>
+            {/* Contenido del modal */}
+            <h2>Políticas de Privacidad</h2>
+            <p>Contenido de las políticas de privacidad...</p>
+
+            {/* Agrega botones u opciones para cerrar el modal */}
+            <button onClick={closeModal}>Cerrar</button>
+          </div>
         </div>
-      </footer>
-    </section>
+      )}
+    </footer>
   );
-}
+};
 
-export default footer;
+const styles = {
+  footer: {
+    backgroundColor: '#f0f0f0',
+    padding: '10px',
+    textAlign: 'center',
+    position: 'relative',
+    bottom: 0,
+    width: '100%',
+  },
+  modalOverlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    
+  },
+  modalContent: {
+    backgroundColor: '#fff',
+    padding: '20px',
+    borderRadius: '5px',
+    maxWidth: '600px',
+  },
+};
+
+export default Footer;
